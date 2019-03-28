@@ -23,8 +23,8 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
-// mongoose.connect( process.env.DATABASE_URL,  { useNewUrlParser: true });
-mongoose.connect('mongodb://localhost/pencil',  { useNewUrlParser: true });
+mongoose.connect( process.env.DATABASE_URL,  { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/pencil',  { useNewUrlParser: true });
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
