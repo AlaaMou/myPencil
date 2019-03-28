@@ -8,8 +8,10 @@ const logger         = require('morgan');
 const engine         = require('ejs-mate');
 const mongoose       = require("mongoose");
 const bodyParser     = require('body-parser');
-const methodOverride = require('method-override')
-const User           = require("./models/user")
+const methodOverride = require('method-override');
+const User           = require("./models/user");
+const favicon        = require('serve-favicon');
+
 
 const session               = require("express-session");
 const passport              = require("passport");
@@ -26,13 +28,17 @@ mongoose.connect( process.env.DATABASE_URL,  { useNewUrlParser: true });
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
+
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
+
 // use ejs-locals for all ejs templates:
 app.engine('ejs', engine);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon2.ico')));
 
 app.use(logger('dev'));
 app.use(express.json());
