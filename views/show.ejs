@@ -14,12 +14,16 @@
         </div>
         
     </div>
-      
-    <div class="container text-left">
+     
+     
+    <% if(currentUser){ %>
+      <div class="container text-left">
         <form action="/drawings/<%= post._id %>?_method=DELETE" method="POST">
             <button class="btn btn-sm btn-danger">Delete</button>
         </form>
-    </div>
+      </div>
+    <% } %>  
+    
 
 <% }) %>
   
