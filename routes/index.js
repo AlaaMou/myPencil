@@ -27,13 +27,13 @@ router.get('/drawings', showPost);
 router.delete('/drawings/:id', isLoggedIn, isAdmin, deletePost);
 
 /* GET Register */
-router.get('/register', getRegister);
+router.get('/register', isLoggedIn, isAdmin, getRegister);
 
 /* GET Login */
 router.get('/login', getLogin);
 
 /* POST Register */
-router.post('/register', postRegister);
+router.post('/register',isLoggedIn, isAdmin, postRegister);
 
 /* POST Login */
 router.post("/login", postLogin )
