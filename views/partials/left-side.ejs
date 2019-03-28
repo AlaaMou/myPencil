@@ -1,0 +1,21 @@
+<!--Left Side Navbar-->
+  <div class="col-lg-3 fixed-left" id="left-side">
+    <div class="container text-center my-5 pt-5">
+      
+      <h1><i class="fas fa-paint-brush"></i></h1>
+      <h2><a href="/">myPENCIL</a></h2>
+      <p class="font-weight-light text-danger">By Aya Hamdy</p>
+      
+      <div class="d-flex flex-column mt-5">
+        <a class="my-3" href="/"><h5>Home</h5></a>
+        <a class="my-3" href="/about"><h5>About</h5></a>
+        <% if(currentUser){ %>
+         <a class="my-3" href="/new"><h5>New</h5></a>
+         <a class="my-3" href="/logout"><h5>Log out</h5></a>
+        <% } %>
+        
+      </div>
+      
+    </div>
+  </div>
+  <!--End Of Left Side-->

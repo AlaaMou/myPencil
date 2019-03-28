@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate') -%>
+
+
+
+
+<% posts.docs.forEach(function(post){ %>
+      
+    <div class="container text-center mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <h4><%= post.title  %></h4>
+                <img class="img-fluid" src="<%= post.image.url %>">
+            </div>
+        </div>
+        
+    </div>
+      
+    <div class="container text-left">
+        <form action="/drawings/<%= post._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-sm btn-danger">Delete</button>
+        </form>
+    </div>
+
+<% }) %>
+  
+
+
+
+
+
+<div class="container text-center">
+    <!-- Add prev button -->
+    <% if(posts.page - 1){ %>
+     <a class="mx-1 mx-sm-4" href="/drawings?page=<%= posts.page -1 %>"> <i class="fas fa-backward"></i> prev</a>
+    <% } %>
+    <!-- Add next button-->
+    <% if((posts.page + 1) <= posts.pages){ %>
+     <a class="mx-1 mx-sm-4" href="/drawings?page=<%= posts.page + 1 %>">next <i class="fas fa-forward"></i></a>
+    <% } %>
+    
+</div>
+
+<div class="container text-center mt-5">
+      <a href="/">Back To Homepage</a>
+</div>
+
+

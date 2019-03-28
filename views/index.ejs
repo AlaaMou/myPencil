@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') -%>
+
+
+<div class="row mx-0">
+  
+  <% include partials/left-side %>
+  
+  <!--Start Of Right Side-->
+<div class="col-12 col-lg-9 text-dark px-0" id="right-side">
+    <% include partials/navbar %>
+<div class="container-fluid">
+  
+  <div class="row" id="home-gallery">
+    
+    <% posts.forEach(function(post,i){ %>
+      <div class="col-sm-6 col-md-4 my-0 px-0">
+ 
+      <a href="/drawings?page=<%= i + 1 %>"><img style="height:17rem; width:100%" class="img-fluid" src="<%= post.image.url %>"></a>
+    </div>
+    <% }) %>
+    
+   
+    
+  </div>
+
+</div>
+
+</div>
+  
+</div>
